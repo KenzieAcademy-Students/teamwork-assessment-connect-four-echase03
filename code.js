@@ -8,6 +8,7 @@ const playBtn = document.querySelector("#btn-start");
 const message = document.querySelector("#heading");
 const colorBtns = document.querySelectorAll(".btn-slot");
 const lines = document.querySelectorAll("hr");
+const resetBtn = document.querySelector("reset");
 let text = message.textContent;
 
 //grabing the buttons
@@ -118,3 +119,11 @@ const updateBoard = function (column, user) {
 updateBoard(2, red);
 updateBoard(2, black);
 updateBoard(2, red);
+
+resetBtn.addEventListener("click", ()=>{
+  gameBoard.forEach(colorBtns =>{
+    colorBtns.style.backgroundcolor = "white";
+  });
+  userTurn.style.backgroundcolor = "black";
+  return switchUser
+})

@@ -47,3 +47,7 @@ td {
 .black-move {
   background-color: black;
 }
+
+.resetBtn {
+  background-color: azure;
+}
