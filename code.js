@@ -23,6 +23,7 @@ const btnSeven = document.getElementById("btn-seven");
 //variables to update the board
 const red = 2;
 const black = 1;
+let totalMoves = 0;
 
 let board = [
   [0, 0, 0, 0, 0, 0, 0],
@@ -51,11 +52,35 @@ const renderBoard = function () {
   }
 };
 
+//Functions to switch users turn
+const redMove = function () {
+  for (const btn of colorBtns) {
+    btn.classList.remove("red-turn");
+  }
+  message.textContent = `Black's Move⚫️`;
+};
+
+const blackMove = function () {
+  for (const btn of colorBtns) {
+    btn.classList.add("red-turn");
+  }
+  message.textContent = `Red's Move🔴`;
+};
+
 //Function to start and restart the game
 playBtn.addEventListener("click", function () {
   message.textContent = `Red's Move🔴`;
   playBtn.textContent = `Restart`;
+  board = [
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0],
+  ];
   //make rhe hidden thing a function cause you need it below
+  //refactor
   for (const line of lines) {
     line.classList.remove("hidden");
   }
@@ -63,7 +88,50 @@ playBtn.addEventListener("click", function () {
   text = message.textContent;
   renderBoard();
   userTurn();
-  console.log(text);
+  totalMoves = 0;
+});
+
+//Function to add to event listeners
+const userMove = function (num) {
+  if (totalMoves % 2 === 0) {
+    redMove();
+    updateBoard(num, red);
+  } else if (totalMoves % 2 === 1) {
+    blackMove();
+    updateBoard(num, black);
+  }
+  console.log(totalMoves);
+  return (totalMoves += 1);
+};
+
+//Event listeners for placemennt buttons
+//Button one
+btnOne.addEventListener("click", function () {
+  userMove(0);
+});
+//Button two
+btnTwo.addEventListener("click", function () {
+  userMove(1);
+});
+//Button three
+btnThree.addEventListener("click", function () {
+  userMove(2);
+});
+//Button four
+btnFour.addEventListener("click", function () {
+  userMove(3);
+});
+//Button five
+btnFive.addEventListener("click", function () {
+  userMove(4);
+});
+//Button six
+btnSix.addEventListener("click", function () {
+  userMove(5);
+});
+//Button seven
+btnSeven.addEventListener("click", function () {
+  userMove(6);
 });
 
 // Needs work or maybe not
@@ -78,24 +146,6 @@ const userTurn = function () {
 //Need to make functions to check for this
 const checkWinner = function () {};
 
-//Have to use in event listenrs
-//Will probablt need to change the text thing
-const switchUser = function () {
-  if (text.startsWith("R")) {
-    for (const btn of colorBtns) {
-      btn.classList.remove("red-turn");
-    }
-    //delete move to event listener
-    text.textContent = `Black's Move⚫️`;
-  } else {
-    for (const btn of colorBtns) {
-      btn.classList.add("red-turn");
-    }
-    //delete move to event listener
-    text.textContent = `Red's Move🔴`;
-  }
-};
-
 const updateBoard = function (column, user) {
   for (let i = board.length - 1; i >= 0; i--) {
     let currentRow = board[i];
@@ -105,16 +155,12 @@ const updateBoard = function (column, user) {
       currentRow[column] = user;
       i = 0;
     }
-    console.log(board);
   }
   renderBoard();
   //need to turn into function
-  for (const line of lines) {
-    line.classList.remove("hidden");
-  }
-  btnContainer.classList.remove("hidden");
+  //refactor
+  // for (const line of lines) {
+  //   line.classList.remove("hidden");
+  // }
+  // btnContainer.classList.remove("hidden");
 };
-
-updateBoard(2, red);
-updateBoard(2, black);
-updateBoard(2, red);
