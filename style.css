@@ -6,7 +6,7 @@ td {
   display: inline-block;
   width: 75px;
   height: 75px;
-  background-color: lightgray;
+  background-color: lightgrey;
   border-radius: 50%;
 }
 
@@ -20,11 +20,12 @@ td {
 }
 
 .btn-slot {
-  background-color: gray;
+  background-color: grey;
   width: 75px;
   height: 75px;
   border-radius: 50%;
   border: 1px solid;
+  margin: -1px;
 }
 
 .hidden {
@@ -46,4 +47,240 @@ td {
 
 .black-move {
   background-color: black;
+}
+/* Black animation classes */
+.ball-one-black {
+  position: relative;
+  animation-name: ball-bounce-one-black;
+  animation-duration: 0.4s;
+}
+.ball-two-black {
+  position: relative;
+  animation-name: ball-bounce-two-black;
+  animation-duration: 0.36s;
+}
+.ball-three-black {
+  position: relative;
+  animation-name: ball-bounce-three-black;
+  animation-duration: 0.32s;
+}
+.ball-four-black {
+  position: relative;
+  animation-name: ball-bounce-four-black;
+  animation-duration: 0.28s;
+}
+.ball-five-black {
+  position: relative;
+  animation-name: ball-bounce-five-black;
+  animation-duration: 0.24s;
+}
+.ball-six-black {
+  position: relative;
+  animation-name: ball-bounce-top-black;
+  animation-duration: 0.2s;
+}
+
+@keyframes ball-bounce-one-black {
+  0% {
+    top: 0;
+    background-color: black;
+  }
+  32% {
+    top: 493px;
+    background-color: black;
+  }
+  60% {
+    top: 335.24px;
+    background-color: black;
+  }
+  82% {
+    top: 493px;
+    background-color: black;
+  }
+  85% {
+    top: 443.7px;
+    background-color: black;
+  }
+  90% {
+    top: 493;
+    background-color: black;
+  }
+  95% {
+    top: 473.28px;
+    background-color: black;
+  }
+  100% {
+    top: 493px;
+    background-color: black;
+  }
+}
+@keyframes ball-bounce-two-black {
+  0% {
+    top: 0px;
+    background-color: black;
+  }
+  32% {
+    top: 414px;
+    background-color: black;
+  }
+  60% {
+    top: 281.52px;
+    background-color: black;
+  }
+  82% {
+    top: 414px;
+    background-color: black;
+  }
+  85% {
+    top: 372.6px;
+    background-color: black;
+  }
+  90% {
+    top: 414px;
+    background-color: black;
+  }
+  95% {
+    top: 397.44px;
+    background-color: black;
+  }
+  100% {
+    top: 414px;
+    background-color: black;
+  }
+}
+@keyframes ball-bounce-three-black {
+  0% {
+    top: 0px;
+    background-color: black;
+  }
+  32% {
+    top: 335px;
+    background-color: black;
+  }
+  60% {
+    top: 227.8px;
+    background-color: black;
+  }
+  82% {
+    top: 335px;
+    background-color: black;
+  }
+  85% {
+    top: 301.5px;
+    background-color: black;
+  }
+  90% {
+    top: 335px;
+    background-color: black;
+  }
+  95% {
+    top: 321.6px;
+    background-color: black;
+  }
+  100% {
+    top: 335px;
+    background-color: black;
+  }
+}
+@keyframes ball-bounce-four-black {
+  0% {
+    top: 0px;
+    background-color: black;
+  }
+  32% {
+    top: 256px;
+    background-color: black;
+  }
+  60% {
+    top: 174.08px;
+    background-color: black;
+  }
+  82% {
+    top: 256px;
+    background-color: black;
+  }
+  85% {
+    top: 230.4px;
+    background-color: black;
+  }
+  90% {
+    top: 256px;
+    background-color: black;
+  }
+  95% {
+    top: 245.76px;
+    background-color: black;
+  }
+  100% {
+    top: 256px;
+    background-color: black;
+  }
+}
+@keyframes ball-bounce-five-black {
+  0% {
+    top: 0px;
+    background-color: black;
+  }
+  32% {
+    top: 177px;
+    background-color: black;
+  }
+  60% {
+    top: 120.36px;
+    background-color: black;
+  }
+  82% {
+    top: 177px;
+    background-color: black;
+  }
+  85% {
+    top: 159.3px;
+    background-color: black;
+  }
+  90% {
+    top: 177px;
+    background-color: black;
+  }
+  95% {
+    top: 169.92px;
+    background-color: black;
+  }
+  100% {
+    top: 177px;
+    background-color: black;
+  }
+}
+@keyframes ball-bounce-top-black {
+  0% {
+    top: 0px;
+    background-color: black;
+  }
+  32% {
+    top: 98px;
+    background-color: black;
+  }
+  60% {
+    top: 66.64px;
+    background-color: black;
+  }
+  82% {
+    top: 98px;
+    background-color: black;
+  }
+  85% {
+    top: 88.2px;
+    background-color: black;
+  }
+  90% {
+    top: 98px;
+    background-color: black;
+  }
+  95% {
+    top: 94.08px;
+    background-color: black;
+  }
+  100% {
+    top: 98px;
+    background-color: black;
+  }
 }
