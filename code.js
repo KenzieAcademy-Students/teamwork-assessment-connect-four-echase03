@@ -67,6 +67,13 @@ const blackMove = function () {
   message.textContent = `Red's Move🔴`;
 };
 
+const hideBtns = function () {
+  for (let line of lines) {
+    line.classList.add("hidden");
+  }
+  btnContainer.classList.add("hidden");
+};
+
 //Function to start and restart the game
 playBtn.addEventListener("click", function () {
   message.textContent = `Red's Move🔴`;
@@ -86,7 +93,6 @@ playBtn.addEventListener("click", function () {
   }
   btnContainer.classList.remove("hidden");
   if (btnContainer.className === "btn-changes") {
-    console.log("This is a good way to check for changes!");
     while (btnContainer.firstChild) {
       btnContainer.removeChild(btnContainer.firstChild);
     }
@@ -121,7 +127,23 @@ const userMove = function (num) {
     updateBoard(num, black);
   }
   checkColumn();
-  isGameWon();
+  if (isGameWon()) {
+    if (totalMoves % 2 === 0) {
+      let winningStatement = document.createElement("h6");
+      winningStatement.innerHTML = `Red won the game in ${
+        totalMoves + 1
+      } moves!`;
+      message.append(winningStatement);
+      hideBtns();
+    } else {
+      let winningStatement = document.createElement("h6");
+      winningStatement.innerHTML = `Black won the game in ${
+        totalMoves + 1
+      } moves!`;
+      message.append(winningStatement);
+      hideBtns();
+    }
+  }
   console.log(totalMoves);
   return (totalMoves += 1);
 };
@@ -346,9 +368,7 @@ let isGameWon = function () {
     }
   }
   //update HTML with winner statement
-  if (won === true) {
-    alert("You won the game!");
-  }
+
   console.log("Game Won? " + won);
   return won;
 };

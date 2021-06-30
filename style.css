@@ -22,8 +22,8 @@ td {
 
 .placeHolder {
   background-color: white;
-  border: 0px;
-  border-color: white;
+  border: 1px solid white;
+  margin: 1px;
   border-radius: 50%;
   width: 75px;
   height: 75px;
@@ -35,7 +35,7 @@ td {
   height: 75px;
   border-radius: 50%;
   border: 1px solid;
-  margin: 1.5px;
+  margin: 0px;
 }
 
 .hidden {
