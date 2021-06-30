@@ -20,15 +20,6 @@ td {
   background-color: yellow;
 }
 
-.placeHolder {
-  background-color: white;
-  border: 0px;
-  border-color: white;
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
-}
-
 .btn-slot {
   background-color: grey;
   width: 75px;

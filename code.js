@@ -186,26 +186,6 @@ playBtn.addEventListener("click", function () {
     line.classList.remove("hidden");
   }
   btnContainer.classList.remove("hidden");
-  // if (btnContainer.className === "btn-changes") {
-  //   console.log("This is a good way to check for changes!");
-  //   while (btnContainer.firstChild) {
-  //     btnContainer.removeChild(btnContainer.firstChild);
-  //   }
-  //   btnContainer.append(btnOne);
-  //   btnOne.className = "btn-slot black-turn";
-  //   btnContainer.append(btnTwo);
-  //   btnTwo.className = "btn-slot black-turn";
-  //   btnContainer.append(btnThree);
-  //   btnThree.className = "btn-slot black-turn";
-  //   btnContainer.append(btnFour);
-  //   btnFour.className = "btn-slot black-turn";
-  //   btnContainer.append(btnFive);
-  //   btnFive.className = "btn-slot black-turn";
-  //   btnContainer.append(btnSix);
-  //   btnSix.className = "btn-slot black-turn";
-  //   btnContainer.append(btnSeven);
-  //   btnSeven.className = "btn-slot black-turn";
-  // }
   text = message.textContent;
   renderBoard();
   userTurn();
@@ -241,7 +221,6 @@ const userMove = function (num) {
       hideBtns();
     }
   }
-  // checkColumn();
   isGameWon();
   console.log(totalMoves);
   return (totalMoves += 1);
@@ -420,49 +399,6 @@ const updateBoard = function (column, user) {
   }
   renderBoard();
 };
-
-//Goal - stop updateBoard function or remove btn event listener once top array is not equal to 0
-//once top array is anything not 0 then change display
-//maybe just create a new function and throw it in usermove?
-
-// function removeButton(button) {
-//   if (button) {
-//     let placeHolder = document.createElement("button");
-//     placeHolder.className = "placeHolder";
-//     btnContainer.replaceChild(placeHolder, button);
-//     btnContainer.classList.add("btn-changes");
-//   }
-// }
-
-// function checkColumn() {
-//   for (let i = 0; i < board[0].length; i++) {
-//     if (board[0][i] !== 0) {
-//       if (i === 0) {
-//         let buttonDisplay = document.querySelector("#btn-one");
-//         removeButton(buttonDisplay);
-//         // buttonDisplay.className = "hidden";
-//       } else if (i === 1) {
-//         let buttonDisplay = document.querySelector("#btn-two");
-//         removeButton(buttonDisplay);
-//       } else if (i === 2) {
-//         let buttonDisplay = document.querySelector("#btn-three");
-//         removeButton(buttonDisplay);
-//       } else if (i === 3) {
-//         let buttonDisplay = document.querySelector("#btn-four");
-//         removeButton(buttonDisplay);
-//       } else if (i === 4) {
-//         let buttonDisplay = document.querySelector("#btn-five");
-//         removeButton(buttonDisplay);
-//       } else if (i === 5) {
-//         let buttonDisplay = document.querySelector("#btn-six");
-//         removeButton(buttonDisplay);
-//       } else if (i === 6) {
-//         let buttonDisplay = document.querySelector("#btn-seven");
-//         removeButton(buttonDisplay);
-//       }
-//     }
-//   }
-// }
 
 // isGameWon() function returns true if 4-in-a-row is found on the board
 let isGameWon = function () {
