@@ -144,9 +144,6 @@ const userTurn = function () {
   }
 };
 
-//Need to make functions to check for this
-const checkWinner = function () {};
-
 const updateBoard = function (column, user) {
   for (let i = board.length - 1; i >= 0; i--) {
     let currentRow = board[i];
@@ -165,10 +162,6 @@ const updateBoard = function (column, user) {
   // }
   // btnContainer.classList.remove("hidden");
 };
-
-updateBoard(2, red);
-updateBoard(2, black);
-updateBoard(2, red);
 
 
 // isGameWon() function returns true if 4-in-a-row is found on the board
@@ -272,4 +265,5 @@ let isGameWon = function() {
     console.log("Game Won? " + won)
     return won
   }
+
 
