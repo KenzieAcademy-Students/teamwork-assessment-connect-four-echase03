@@ -86,6 +86,26 @@ playBtn.addEventListener("click", function () {
     line.classList.remove("hidden");
   }
   btnContainer.classList.remove("hidden");
+  if (btnContainer.className === "btn-changes") {
+    console.log("This is a good way to check for changes!");
+    while (btnContainer.firstChild) {
+      btnContainer.removeChild(btnContainer.firstChild);
+    }
+    btnContainer.append(btnOne);
+    btnOne.className = "btn-slot black-turn";
+    btnContainer.append(btnTwo);
+    btnTwo.className = "btn-slot black-turn";
+    btnContainer.append(btnThree);
+    btnThree.className = "btn-slot black-turn";
+    btnContainer.append(btnFour);
+    btnFour.className = "btn-slot black-turn";
+    btnContainer.append(btnFive);
+    btnFive.className = "btn-slot black-turn";
+    btnContainer.append(btnSix);
+    btnSix.className = "btn-slot black-turn";
+    btnContainer.append(btnSeven);
+    btnSeven.className = "btn-slot black-turn";
+  }
   text = message.textContent;
   renderBoard();
   userTurn();
@@ -101,6 +121,8 @@ const userMove = function (num) {
     blackMove();
     updateBoard(num, black);
   }
+  checkColumn();
+  isGameWon();
   console.log(totalMoves);
   return (totalMoves += 1);
 };
@@ -155,6 +177,7 @@ const updateBoard = function (column, user) {
     }
   }
   renderBoard();
+  // checkColumn();
   //need to turn into function
   //refactor
   // for (const line of lines) {
@@ -163,107 +186,167 @@ const updateBoard = function (column, user) {
   // btnContainer.classList.remove("hidden");
 };
 
+//Goal - stop updateBoard function or remove btn event listener once top array is not equal to 0
+//once top array is anything not 0 then change display
+//maybe just create a new function and throw it in usermove?
+
+function removeButton(button) {
+  if (button) {
+    let placeHolder = document.createElement("button");
+    placeHolder.className = "placeHolder";
+    btnContainer.replaceChild(placeHolder, button);
+    btnContainer.classList.add("btn-changes");
+  }
+}
+
+function checkColumn() {
+  for (let i = 0; i < board[0].length; i++) {
+    if (board[0][i] !== 0) {
+      if (i === 0) {
+        let buttonDisplay = document.querySelector("#btn-one");
+        removeButton(buttonDisplay);
+        // buttonDisplay.className = "hidden";
+      } else if (i === 1) {
+        let buttonDisplay = document.querySelector("#btn-two");
+        removeButton(buttonDisplay);
+      } else if (i === 2) {
+        let buttonDisplay = document.querySelector("#btn-three");
+        removeButton(buttonDisplay);
+      } else if (i === 3) {
+        let buttonDisplay = document.querySelector("#btn-four");
+        removeButton(buttonDisplay);
+      } else if (i === 4) {
+        let buttonDisplay = document.querySelector("#btn-five");
+        removeButton(buttonDisplay);
+      } else if (i === 5) {
+        let buttonDisplay = document.querySelector("#btn-six");
+        removeButton(buttonDisplay);
+      } else if (i === 6) {
+        let buttonDisplay = document.querySelector("#btn-seven");
+        removeButton(buttonDisplay);
+      }
+    }
+  }
+}
 
 // isGameWon() function returns true if 4-in-a-row is found on the board
-let isGameWon = function() {
-  let won = false
+let isGameWon = function () {
+  let won = false;
   //set won as false so it will return false at end of function if it doesn't find a 4-in-a-row
   const edgeX = board[0].length;
   //x axis edge is fine as length
   const edgeY = board.length - 3;
   //made limit/edge for Y axis search, so diagonal and/or down searches don't go out of bounds
   //length of each array is 6, but length of board array is only 5,
-  //also we're searching from top down, so we only need to search arrays 0 through 2 (so length of 5, -3, or board.length -3) 
+  //also we're searching from top down, so we only need to search arrays 0 through 2 (so length of 5, -3, or board.length -3)
   //to find any 4-in-a-row down and/or diagonal
 
   // HORIZONTAL
   // iterate each row
-  
+
   //For horizontal searches use entire board.length for y instead of edgeY
   //so it can find any horizontal 4-in-a-rows on arrays/rows of indexes 3 through 5
-  for(let y = 0; y < board.length; y++){
-  
+  for (let y = 0; y < board.length; y++) {
     // iterate each cell in the row
-    for(let x = 0; x < edgeX; x++) {
+    for (let x = 0; x < edgeX; x++) {
       let cell = board[y][x];
-      
+
       // Only check if cell is filled
-      if(cell !== 0) {
-        
+      if (cell !== 0) {
         // Check the next three cells for the same value
-        if(cell === board[y][x+1] && cell === board[y][x+2] && cell === board[y][x+3]) {
-          console.log("4 in a row horizontal found at " + (x+1) + ":" + (y+1))
-          
-          won = true
+        if (
+          cell === board[y][x + 1] &&
+          cell === board[y][x + 2] &&
+          cell === board[y][x + 3]
+        ) {
+          console.log(
+            "4 in a row horizontal found at " + (x + 1) + ":" + (y + 1)
+          );
+
+          won = true;
         }
       }
     }
   }
-  
+
   // VERTICAL
-  // iterate each row   
-  for(let y = 0; y < edgeY; y++){
-  
+  // iterate each row
+  for (let y = 0; y < edgeY; y++) {
     // iterate each cell in the row
-    for(let x = 0; x < edgeX; x++) {
+    for (let x = 0; x < edgeX; x++) {
       let cell = board[y][x];
-      
+
       // Only check if cell is filled
-      if(cell !== 0) {
-        
+      if (cell !== 0) {
         // Check the next three cells for the same value
-        if(cell === board[y+1][x] && cell === board[y+2][x] && cell === board[y+3][x] ) {
-          console.log("4 in a row vertical found at " + (x+1) + ":" + (y+1))
-          
-          won = true
+        if (
+          cell === board[y + 1][x] &&
+          cell === board[y + 2][x] &&
+          cell === board[y + 3][x]
+        ) {
+          console.log(
+            "4 in a row vertical found at " + (x + 1) + ":" + (y + 1)
+          );
+
+          won = true;
         }
       }
     }
   }
-  
+
   // DIAGONAL (DOWN RIGHT)
-  // iterate each row   
-  for(let y = 0; y < edgeY; y++){
-  
+  // iterate each row
+  for (let y = 0; y < edgeY; y++) {
     // iterate each cell in the row
-    for(let x = 0; x < edgeX; x++) {
+    for (let x = 0; x < edgeX; x++) {
       let cell = board[y][x];
-      
+
       // Only check if cell is filled
-      if(cell !== 0) {
-        
+      if (cell !== 0) {
         // Check the next three cells for the same value
-        if(cell === board[y+1][x+1] && cell === board[y+2][x+2] && cell === board[y+3][x+3] ) {
-          console.log("4 in a row down-right found at " + (x+1) + ":" + (y+1))
-          
-          won = true
+        if (
+          cell === board[y + 1][x + 1] &&
+          cell === board[y + 2][x + 2] &&
+          cell === board[y + 3][x + 3]
+        ) {
+          console.log(
+            "4 in a row down-right found at " + (x + 1) + ":" + (y + 1)
+          );
+
+          won = true;
         }
       }
     }
   }
-  
+
   // DIAGONAL (DOWN LEFT)
-  // iterate each row   
-  for(let y = 0; y < edgeY; y++){
-  
+  // iterate each row
+  for (let y = 0; y < edgeY; y++) {
     // iterate each cell in the row
-    for(let x = 0; x < edgeX; x++) {
+    for (let x = 0; x < edgeX; x++) {
       let cell = board[y][x];
-      
+
       // Only check if cell is filled
-      if(cell !== 0) {
-        
+      if (cell !== 0) {
         // Check the next three cells for the same value
-        if(cell === board[y+1][x-1] && cell === board[y+2][x-2] && cell === board[y+3][x-3]) {
-          console.log("4 in a row down-left found at " + (x+1) + ":" + (y+1))
-          
-          won = true
+        if (
+          cell === board[y + 1][x - 1] &&
+          cell === board[y + 2][x - 2] &&
+          cell === board[y + 3][x - 3]
+        ) {
+          console.log(
+            "4 in a row down-left found at " + (x + 1) + ":" + (y + 1)
+          );
+
+          won = true;
         }
       }
     }
   }
-    console.log("Game Won? " + won)
-    return won
+  //update HTML with winner statement
+  if (won === true) {
+    alert("You won the game!");
   }
-
-
+  console.log("Game Won? " + won);
+  return won;
+};
