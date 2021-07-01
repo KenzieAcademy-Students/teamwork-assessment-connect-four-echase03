@@ -1,6 +1,107 @@
 "use strict";
 // Your Code Here.
 
+//Just make a function to remove all the animation classes from the btns
+const clearClasses = function () {
+  btnOne.classList.remove("ball-one-black");
+  btnOne.classList.remove("ball-two-black");
+  btnOne.classList.remove("ball-three-black");
+  btnOne.classList.remove("ball-four-black");
+  btnOne.classList.remove("ball-five-black");
+  btnOne.classList.remove("ball-six-black");
+  btnOne.classList.remove("ball-one-red");
+  btnOne.classList.remove("ball-two-red");
+  btnOne.classList.remove("ball-three-red");
+  btnOne.classList.remove("ball-four-red");
+  btnOne.classList.remove("ball-five-red");
+  btnOne.classList.remove("ball-six-red");
+
+  btnTwo.classList.remove("ball-one-black");
+  btnTwo.classList.remove("ball-two-black");
+  btnTwo.classList.remove("ball-three-black");
+  btnTwo.classList.remove("ball-four-black");
+  btnTwo.classList.remove("ball-five-black");
+  btnTwo.classList.remove("ball-six-black");
+  btnTwo.classList.remove("ball-one-red");
+  btnTwo.classList.remove("ball-two-red");
+  btnTwo.classList.remove("ball-three-red");
+  btnTwo.classList.remove("ball-four-red");
+  btnTwo.classList.remove("ball-five-red");
+  btnTwo.classList.remove("ball-six-red");
+
+  btnThree.classList.remove("ball-one-black");
+  btnThree.classList.remove("ball-two-black");
+  btnThree.classList.remove("ball-three-black");
+  btnThree.classList.remove("ball-four-black");
+  btnThree.classList.remove("ball-five-black");
+  btnThree.classList.remove("ball-six-black");
+  btnThree.classList.remove("ball-one-red");
+  btnThree.classList.remove("ball-two-red");
+  btnThree.classList.remove("ball-three-red");
+  btnThree.classList.remove("ball-four-red");
+  btnThree.classList.remove("ball-five-red");
+  btnThree.classList.remove("ball-six-red");
+
+  btnFour.classList.remove("ball-one-black");
+  btnFour.classList.remove("ball-two-black");
+  btnFour.classList.remove("ball-three-black");
+  btnFour.classList.remove("ball-four-black");
+  btnFour.classList.remove("ball-five-black");
+  btnFour.classList.remove("ball-six-black");
+  btnFour.classList.remove("ball-one-red");
+  btnFour.classList.remove("ball-two-red");
+  btnFour.classList.remove("ball-three-red");
+  btnFour.classList.remove("ball-four-red");
+  btnFour.classList.remove("ball-five-red");
+  btnFour.classList.remove("ball-six-red");
+
+  btnFive.classList.remove("ball-one-black");
+  btnFive.classList.remove("ball-two-black");
+  btnFive.classList.remove("ball-three-black");
+  btnFive.classList.remove("ball-four-black");
+  btnFive.classList.remove("ball-five-black");
+  btnFive.classList.remove("ball-six-black");
+  btnFive.classList.remove("ball-one-red");
+  btnFive.classList.remove("ball-two-red");
+  btnFive.classList.remove("ball-three-red");
+  btnFive.classList.remove("ball-four-red");
+  btnFive.classList.remove("ball-five-red");
+  btnFive.classList.remove("ball-six-red");
+
+  btnSix.classList.remove("ball-one-black");
+  btnSix.classList.remove("ball-two-black");
+  btnSix.classList.remove("ball-three-black");
+  btnSix.classList.remove("ball-four-black");
+  btnSix.classList.remove("ball-five-black");
+  btnSix.classList.remove("ball-six-black");
+  btnSix.classList.remove("ball-one-red");
+  btnSix.classList.remove("ball-two-red");
+  btnSix.classList.remove("ball-three-red");
+  btnSix.classList.remove("ball-four-red");
+  btnSix.classList.remove("ball-five-red");
+  btnSix.classList.remove("ball-six-red");
+
+  btnSeven.classList.remove("ball-one-black");
+  btnSeven.classList.remove("ball-two-black");
+  btnSeven.classList.remove("ball-three-black");
+  btnSeven.classList.remove("ball-four-black");
+  btnSeven.classList.remove("ball-five-black");
+  btnSeven.classList.remove("ball-six-black");
+  btnSeven.classList.remove("ball-one-red");
+  btnSeven.classList.remove("ball-two-red");
+  btnSeven.classList.remove("ball-three-red");
+  btnSeven.classList.remove("ball-four-red");
+  btnSeven.classList.remove("ball-five-red");
+  btnSeven.classList.remove("ball-six-red");
+};
+
+const hideBtns = function () {
+  for (const line of lines) {
+    line.classList.add("hidden");
+  }
+  btnContainer.classList.add("hidden");
+};
+
 //grab elemnets
 const btnContainer = document.querySelector("#btn-holder");
 const gameBoard = document.querySelector("#game-board");
@@ -85,30 +186,18 @@ playBtn.addEventListener("click", function () {
     line.classList.remove("hidden");
   }
   btnContainer.classList.remove("hidden");
-  if (btnContainer.className === "btn-changes") {
-    console.log("This is a good way to check for changes!");
-    while (btnContainer.firstChild) {
-      btnContainer.removeChild(btnContainer.firstChild);
-    }
-    btnContainer.append(btnOne);
-    btnOne.className = "btn-slot black-turn";
-    btnContainer.append(btnTwo);
-    btnTwo.className = "btn-slot black-turn";
-    btnContainer.append(btnThree);
-    btnThree.className = "btn-slot black-turn";
-    btnContainer.append(btnFour);
-    btnFour.className = "btn-slot black-turn";
-    btnContainer.append(btnFive);
-    btnFive.className = "btn-slot black-turn";
-    btnContainer.append(btnSix);
-    btnSix.className = "btn-slot black-turn";
-    btnContainer.append(btnSeven);
-    btnSeven.className = "btn-slot black-turn";
-  }
   text = message.textContent;
   renderBoard();
   userTurn();
   totalMoves = 0;
+  btnOneCount = 0;
+  btnTwoCount = 0;
+  btnThreeCount = 0;
+  btnFourCount = 0;
+  btnFiveCount = 0;
+  btnSixCount = 0;
+  btnSevenCount = 0;
+  clearClasses();
 });
 
 //Function to add to event listeners
@@ -116,44 +205,177 @@ const userMove = function (num) {
   if (totalMoves % 2 === 0) {
     redMove();
     updateBoard(num, red);
+    if (isGameWon()) {
+      message.textContent = `Congrats! Red you won in ${totalMoves + 1} moves!`;
+      playBtn.textContent = "New Game!";
+      hideBtns();
+    }
   } else if (totalMoves % 2 === 1) {
     blackMove();
     updateBoard(num, black);
+    if (isGameWon()) {
+      message.textContent = `Congrats! Black you won in ${
+        totalMoves + 1
+      } moves!`;
+      playBtn.textContent = "New Game!";
+      hideBtns();
+    }
   }
-  checkColumn();
   isGameWon();
   console.log(totalMoves);
   return (totalMoves += 1);
 };
 
+//Variables for counting each click to adjust the animations
+let btnOneCount = 0;
+let btnTwoCount = 0;
+let btnThreeCount = 0;
+let btnFourCount = 0;
+let btnFiveCount = 0;
+let btnSixCount = 0;
+let btnSevenCount = 0;
+
+//Function for animations
+const ballDrop = function (element, num, btnCount) {
+  if (totalMoves % 2 == 0) {
+    switch (btnCount) {
+      case 0:
+        element.classList.add("ball-one-red");
+        setTimeout(function () {
+          userMove(num);
+        }, 400);
+        break;
+      case 1:
+        element.classList.add("ball-two-red");
+        setTimeout(function () {
+          userMove(num);
+        }, 360);
+        break;
+      case 2:
+        element.classList.add("ball-three-red");
+        setTimeout(function () {
+          userMove(num);
+        }, 320);
+        break;
+      case 3:
+        element.classList.add("ball-four-red");
+        setTimeout(function () {
+          userMove(num);
+        }, 280);
+        break;
+      case 4:
+        element.classList.add("ball-five-red");
+        setTimeout(function () {
+          userMove(num);
+        }, 240);
+        break;
+      case 5:
+        element.classList.add("ball-six-red");
+        setTimeout(function () {
+          userMove(num);
+        }, 200);
+        break;
+    }
+  } else if (totalMoves % 2 === 1) {
+    switch (btnCount) {
+      case 0:
+        element.classList.remove("ball-one-red");
+        element.classList.add("ball-one-black");
+        setTimeout(function () {
+          userMove(num);
+        }, 400);
+        break;
+      case 1:
+        element.classList.remove("ball-one-red");
+        element.classList.remove("ball-two-red");
+        element.classList.add("ball-two-black");
+        setTimeout(function () {
+          userMove(num);
+        }, 360);
+        break;
+      case 2:
+        element.classList.remove("ball-one-red");
+        element.classList.remove("ball-two-red");
+        element.classList.remove("ball-three-red");
+        element.classList.add("ball-three-black");
+        setTimeout(function () {
+          userMove(num);
+        }, 320);
+        break;
+      case 3:
+        element.classList.remove("ball-one-red");
+        element.classList.remove("ball-two-red");
+        element.classList.remove("ball-three-red");
+        element.classList.remove("ball-four-red");
+        element.classList.add("ball-four-black");
+        setTimeout(function () {
+          userMove(num);
+        }, 280);
+        break;
+      case 4:
+        element.classList.remove("ball-one-red");
+        element.classList.remove("ball-two-red");
+        element.classList.remove("ball-three-red");
+        element.classList.remove("ball-four-red");
+        element.classList.remove("ball-five-red");
+        element.classList.add("ball-five-black");
+        setTimeout(function () {
+          userMove(num);
+        }, 240);
+        break;
+      case 5:
+        element.classList.remove("ball-one-red");
+        element.classList.remove("ball-two-red");
+        element.classList.remove("ball-three-red");
+        element.classList.remove("ball-four-red");
+        element.classList.remove("ball-five-red");
+        element.classList.remove("ball-six-red");
+        element.classList.add("ball-six-black");
+        setTimeout(function () {
+          userMove(num);
+        }, 200);
+        break;
+    }
+  }
+};
+
 //Event listeners for placemennt buttons
 //Button one
 btnOne.addEventListener("click", function () {
-  userMove(0);
+  ballDrop(btnOne, 0, btnOneCount);
+  btnOneCount += 1;
 });
+
 //Button two
 btnTwo.addEventListener("click", function () {
-  userMove(1);
+  ballDrop(btnTwo, 1, btnTwoCount);
+  btnTwoCount += 1;
 });
+
 //Button three
 btnThree.addEventListener("click", function () {
-  userMove(2);
+  ballDrop(btnThree, 2, btnThreeCount);
+  btnThreeCount += 1;
 });
 //Button four
 btnFour.addEventListener("click", function () {
-  userMove(3);
+  ballDrop(btnFour, 3, btnFourCount);
+  btnFourCount += 1;
 });
 //Button five
 btnFive.addEventListener("click", function () {
-  userMove(4);
+  ballDrop(btnFive, 4, btnFiveCount);
+  btnFiveCount += 1;
 });
 //Button six
 btnSix.addEventListener("click", function () {
-  userMove(5);
+  ballDrop(btnSix, 5, btnSixCount);
+  btnSixCount += 1;
 });
 //Button seven
 btnSeven.addEventListener("click", function () {
-  userMove(6);
+  ballDrop(btnSeven, 6, btnSevenCount);
+  btnSevenCount += 1;
 });
 
 // Needs work or maybe not
@@ -164,9 +386,6 @@ const userTurn = function () {
     }
   }
 };
-
-//Need to make functions to check for this
-// const checkWinner = function () {};
 
 const updateBoard = function (column, user) {
   for (let i = board.length - 1; i >= 0; i--) {
@@ -179,57 +398,7 @@ const updateBoard = function (column, user) {
     }
   }
   renderBoard();
-  // checkColumn();
-  //need to turn into function
-  //refactor
-  // for (const line of lines) {
-  //   line.classList.remove("hidden");
-  // }
-  // btnContainer.classList.remove("hidden");
 };
-
-//Goal - stop updateBoard function or remove btn event listener once top array is not equal to 0
-//once top array is anything not 0 then change display
-//maybe just create a new function and throw it in usermove?
-
-function removeButton(button) {
-  if (button) {
-    let placeHolder = document.createElement("button");
-    placeHolder.className = "placeHolder";
-    btnContainer.replaceChild(placeHolder, button);
-    btnContainer.classList.add("btn-changes");
-  }
-}
-
-function checkColumn() {
-  for (let i = 0; i < board[0].length; i++) {
-    if (board[0][i] !== 0) {
-      if (i === 0) {
-        let buttonDisplay = document.querySelector("#btn-one");
-        removeButton(buttonDisplay);
-        // buttonDisplay.className = "hidden";
-      } else if (i === 1) {
-        let buttonDisplay = document.querySelector("#btn-two");
-        removeButton(buttonDisplay);
-      } else if (i === 2) {
-        let buttonDisplay = document.querySelector("#btn-three");
-        removeButton(buttonDisplay);
-      } else if (i === 3) {
-        let buttonDisplay = document.querySelector("#btn-four");
-        removeButton(buttonDisplay);
-      } else if (i === 4) {
-        let buttonDisplay = document.querySelector("#btn-five");
-        removeButton(buttonDisplay);
-      } else if (i === 5) {
-        let buttonDisplay = document.querySelector("#btn-six");
-        removeButton(buttonDisplay);
-      } else if (i === 6) {
-        let buttonDisplay = document.querySelector("#btn-seven");
-        removeButton(buttonDisplay);
-      }
-    }
-  }
-}
 
 // isGameWon() function returns true if 4-in-a-row is found on the board
 let isGameWon = function () {
@@ -261,9 +430,9 @@ let isGameWon = function () {
           cell === board[y][x + 2] &&
           cell === board[y][x + 3]
         ) {
-          console.log(
-            "4 in a row horizontal found at " + (x + 1) + ":" + (y + 1)
-          );
+          // console.log(
+          //   "4 in a row horizontal found at " + (x + 1) + ":" + (y + 1)
+          // );
 
           won = true;
         }
@@ -286,9 +455,9 @@ let isGameWon = function () {
           cell === board[y + 2][x] &&
           cell === board[y + 3][x]
         ) {
-          console.log(
-            "4 in a row vertical found at " + (x + 1) + ":" + (y + 1)
-          );
+          // console.log(
+          //   "4 in a row vertical found at " + (x + 1) + ":" + (y + 1)
+          // );
 
           won = true;
         }
@@ -311,9 +480,9 @@ let isGameWon = function () {
           cell === board[y + 2][x + 2] &&
           cell === board[y + 3][x + 3]
         ) {
-          console.log(
-            "4 in a row down-right found at " + (x + 1) + ":" + (y + 1)
-          );
+          // console.log(
+          //   "4 in a row down-right found at " + (x + 1) + ":" + (y + 1)
+          // );
 
           won = true;
         }
@@ -336,9 +505,9 @@ let isGameWon = function () {
           cell === board[y + 2][x - 2] &&
           cell === board[y + 3][x - 3]
         ) {
-          console.log(
-            "4 in a row down-left found at " + (x + 1) + ":" + (y + 1)
-          );
+          // console.log(
+          //   "4 in a row down-left found at " + (x + 1) + ":" + (y + 1)
+          // );
 
           won = true;
         }
@@ -346,9 +515,5 @@ let isGameWon = function () {
     }
   }
   //update HTML with winner statement
-  if (won === true) {
-    alert("You won the game!");
-  }
-  console.log("Game Won? " + won);
   return won;
 };
