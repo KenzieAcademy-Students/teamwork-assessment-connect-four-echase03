@@ -158,19 +158,19 @@ const redMove = function () {
   for (const btn of colorBtns) {
     btn.classList.remove("red-turn");
   }
-  message.textContent = `Black's Move⚫️`;
+  message.textContent = `Black's Move ⚫️`;
 };
 
 const blackMove = function () {
   for (const btn of colorBtns) {
     btn.classList.add("red-turn");
   }
-  message.textContent = `Red's Move🔴`;
+  message.textContent = `Red's Move 🔴`;
 };
 
 //Function to start and restart the game
 playBtn.addEventListener("click", function () {
-  message.textContent = `Red's Move🔴`;
+  message.textContent = `Red's Move 🔴`;
   playBtn.textContent = `Restart`;
   board = [
     [0, 0, 0, 0, 0, 0, 0],
@@ -206,7 +206,10 @@ const userMove = function (num) {
     redMove();
     updateBoard(num, red);
     if (isGameWon()) {
-      message.textContent = `Congrats! Red you won in ${totalMoves + 1} moves!`;
+      message.textContent = `Congrats! Red you won in ${
+        totalMoves / 2 + 1
+      } moves!`;
+      console.log(totalMoves);
       playBtn.textContent = "New Game!";
       hideBtns();
     }
@@ -215,10 +218,12 @@ const userMove = function (num) {
     updateBoard(num, black);
     if (isGameWon()) {
       message.textContent = `Congrats! Black you won in ${
-        totalMoves + 1
+        (totalMoves + 1) / 2
       } moves!`;
       playBtn.textContent = "New Game!";
       hideBtns();
+    } else if (totalMoves === 41) {
+      message.textContent = `It's a tie!`;
     }
   }
   isGameWon();
@@ -339,7 +344,7 @@ const ballDrop = function (element, num, btnCount) {
   }
 };
 
-//Event listeners for placemennt buttons
+//Event listeners for placement buttons
 //Button one
 btnOne.addEventListener("click", function () {
   ballDrop(btnOne, 0, btnOneCount);
@@ -378,7 +383,6 @@ btnSeven.addEventListener("click", function () {
   btnSevenCount += 1;
 });
 
-// Needs work or maybe not
 const userTurn = function () {
   if (text.startsWith("R")) {
     for (const btn of colorBtns) {
@@ -514,6 +518,5 @@ let isGameWon = function () {
       }
     }
   }
-  //update HTML with winner statement
   return won;
 };
