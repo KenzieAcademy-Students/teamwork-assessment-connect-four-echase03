@@ -1,13 +1,25 @@
 /* Write your CSS Here. */
-tr {
-  background-color: yellow;
+body {
+  background-color: rgb(65, 65, 65);
 }
+
+#heading {
+  color: rgb(225, 225, 225);
+  font-family: "Audiowide", cursive;
+  font-size: 50px;
+}
+
 td {
   display: inline-block;
   width: 75px;
   height: 75px;
-  background-color: lightgrey;
   border-radius: 50%;
+  background-image: linear-gradient(
+    135deg,
+    rgb(208, 208, 208),
+    rgb(177, 177, 177),
+    rgb(121, 121, 121)
+  );
 }
 
 #game-container {
@@ -17,15 +29,31 @@ td {
 #game-board {
   margin-left: auto;
   margin-right: auto;
-  background-color: yellow;
+  background-color: rgb(244, 224, 3);
+  box-shadow: 0px 10px 10px black;
+}
+
+#btn-start {
+  padding: 10px;
+  width: 150px;
+  font-size: 20px;
+  box-shadow: 0px 5px 5px black;
+  margin-bottom: 10px;
+  font-family: "Orbitron", sans-serif;
+  /* font-weight: lighter; */
 }
 
 .btn-slot {
-  background-color: grey;
+  /* background-color: rgb(215, 215, 215); */
+  background-image: radial-gradient(
+    rgb(114, 114, 114),
+    rgb(114, 114, 114),
+    rgb(48, 48, 48)
+  );
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  border: 1px solid;
+  border: 0px solid;
   margin: -1px;
 }
 
