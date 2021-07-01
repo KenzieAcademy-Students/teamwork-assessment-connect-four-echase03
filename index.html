@@ -17,10 +17,39 @@
 
     <!-- CSS-->
     <link href="style.css" rel="stylesheet" media="all" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-    Your HTML Here
+    <header>
+      <h1 id="heading">Welcome to Connect Four!</h1>
+      <button id="btn-start">Let's Play!</button>
+    </header>
+    <hr class="hidden" />
+    <div id="game-container">
+      <div id="btn-holder" class="hidden">
+        <button id="btn-one" class="btn-slot black-turn"></button>
+        <button id="btn-two" class="btn-slot black-turn"></button>
+        <button id="btn-three" class="btn-slot black-turn"></button>
+        <button id="btn-four" class="btn-slot black-turn"></button>
+        <button id="btn-five" class="btn-slot black-turn"></button>
+        <button id="btn-six" class="btn-slot black-turn"></button>
+        <button id="btn-seven" class="btn-slot black-turn"></button>
+      </div>
+      <hr class="hidden" />
+      <table id="game-board"></table>
+    </div>
     <script src="code.js"></script>
   </body>
 </html>
