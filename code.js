@@ -209,7 +209,6 @@ const userMove = function (num) {
       message.textContent = `Congrats! Red you won in ${
         totalMoves / 2 + 1
       } moves!`;
-      console.log(totalMoves);
       playBtn.textContent = "New Game!";
       hideBtns();
     }
@@ -227,7 +226,6 @@ const userMove = function (num) {
     }
   }
   isGameWon();
-  console.log(totalMoves);
   return (totalMoves += 1);
 };
 
