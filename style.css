@@ -34,20 +34,25 @@ td {
 }
 
 .black-turn:hover {
-  background-color: black;
+  background-image: radial-gradient(
+    rgb(73, 73, 73),
+    rgb(59, 59, 59),
+    black,
+    white
+  );
 }
 
 /* MUST BE UNDER black-turn */
 .red-turn:hover {
-  background-color: red;
+  background-image: radial-gradient(red, red, black);
 }
 
 .red-move {
-  background-color: red;
+  background-image: radial-gradient(red, red, black);
 }
 
 .black-move {
-  background-color: black;
+  background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
 }
 /* Black animation classes */
 .ball-one-black {
@@ -85,205 +90,253 @@ td {
 @keyframes ball-bounce-one-black {
   0% {
     top: 0;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   32% {
     top: 493px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   60% {
     top: 335.24px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   82% {
     top: 493px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   85% {
     top: 443.7px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   90% {
     top: 493;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   95% {
     top: 473.28px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   100% {
     top: 493px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
 }
 @keyframes ball-bounce-two-black {
   0% {
     top: 0px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   32% {
     top: 414px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   60% {
     top: 281.52px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   82% {
     top: 414px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   85% {
     top: 372.6px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   90% {
     top: 414px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   95% {
     top: 397.44px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   100% {
     top: 414px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
 }
 @keyframes ball-bounce-three-black {
   0% {
     top: 0px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   32% {
     top: 335px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   60% {
     top: 227.8px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   82% {
     top: 335px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   85% {
     top: 301.5px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   90% {
     top: 335px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   95% {
     top: 321.6px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   100% {
     top: 335px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
 }
 @keyframes ball-bounce-four-black {
   0% {
     top: 0px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   32% {
     top: 256px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   60% {
     top: 174.08px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   82% {
     top: 256px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   85% {
     top: 230.4px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   90% {
     top: 256px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   95% {
     top: 245.76px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   100% {
     top: 256px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
 }
 @keyframes ball-bounce-five-black {
   0% {
     top: 0px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   32% {
     top: 177px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   60% {
     top: 120.36px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   82% {
     top: 177px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   85% {
     top: 159.3px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   90% {
     top: 177px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   95% {
     top: 169.92px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   100% {
     top: 177px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
 }
 @keyframes ball-bounce-top-black {
   0% {
     top: 0px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   32% {
     top: 98px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   60% {
     top: 66.64px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   82% {
     top: 98px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   85% {
     top: 88.2px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   90% {
     top: 98px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   95% {
     top: 94.08px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
   100% {
     top: 98px;
-    background-color: black;
+
+    background-image: radial-gradient(rgb(73, 73, 73), rgb(59, 59, 59), black);
   }
 }
 
@@ -323,204 +376,252 @@ td {
 @keyframes ball-bounce-one-red {
   0% {
     top: 0;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   32% {
     top: 493px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   60% {
     top: 335.24px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   82% {
     top: 493px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   85% {
     top: 443.7px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   90% {
     top: 493;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   95% {
     top: 473.28px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   100% {
     top: 493px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
 }
 @keyframes ball-bounce-two-red {
   0% {
     top: 0px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   32% {
     top: 414px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   60% {
     top: 281.52px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   82% {
     top: 414px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   85% {
     top: 372.6px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   90% {
     top: 414px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   95% {
     top: 397.44px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   100% {
     top: 414px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
 }
 @keyframes ball-bounce-three-red {
   0% {
     top: 0px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   32% {
     top: 335px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   60% {
     top: 227.8px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   82% {
     top: 335px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   85% {
     top: 301.5px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   90% {
     top: 335px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   95% {
     top: 321.6px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   100% {
     top: 335px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
 }
 @keyframes ball-bounce-four-red {
   0% {
     top: 0px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   32% {
     top: 256px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   60% {
     top: 174.08px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   82% {
     top: 256px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   85% {
     top: 230.4px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   90% {
     top: 256px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   95% {
     top: 245.76px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   100% {
     top: 256px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
 }
 @keyframes ball-bounce-five-red {
   0% {
     top: 0px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   32% {
     top: 177px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   60% {
     top: 120.36px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   82% {
     top: 177px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   85% {
     top: 159.3px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   90% {
     top: 177px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   95% {
     top: 169.92px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   100% {
     top: 177px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
 }
 @keyframes ball-bounce-top-red {
   0% {
     top: 0px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   32% {
     top: 98px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   60% {
     top: 66.64px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   82% {
     top: 98px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   85% {
     top: 88.2px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   90% {
     top: 98px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   95% {
     top: 94.08px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
   100% {
     top: 98px;
-    background-color: red;
+
+    background-image: radial-gradient(red, red, black);
   }
 }
